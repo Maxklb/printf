@@ -1,16 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   print_string.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 18:40:33 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/11 23:17:40 by makoch-l         ###   ########.fr       */
+/*   Created: 2024/02/13 23:36:11 by makoch-l          #+#    #+#             */
+/*   Updated: 2024/02/13 23:38:34 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_printf(const char *format, ...)
+int	print_string(char *str)
 {
+	unsigned int	i;
 	
+	i = 0;
+	if (!str)
+	{
+		ft_putstr_fd((NULL), 1);
+		return (6);
+	}
+	while (str[i])
+		i++;
+	ft_putstr_fd(str, 1);
+	return (i);
 }
