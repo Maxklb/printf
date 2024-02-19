@@ -6,7 +6,7 @@
 #    By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/09 13:44:22 by makoch-l          #+#    #+#              #
-#    Updated: 2024/02/19 17:41:25 by makoch-l         ###   ########.fr        #
+#    Updated: 2024/02/19 17:49:02 by makoch-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ SRCS = ft_printf.c \
 		print_string.c \
 		print_unsigned.c \
 		print_hex.c \
+		print_pointer.c
 
 OBJS = $(SRCS:.c=.o) 
 
