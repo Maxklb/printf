@@ -6,7 +6,7 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:48:05 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/22 22:35:01 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 22:42:48 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,7 @@ int	print_pointer(unsigned long value, int asc)
 		tempval = tempval / 16;
 		i--;
 	}
-	i = ft_strlen(printout);
-	i = i + print_string("0x");
+	i = ft_strlen(printout) + print_string("0x");
 	ft_putstr_fd(printout, 1);
 	free(printout);
 	if (value == 0)

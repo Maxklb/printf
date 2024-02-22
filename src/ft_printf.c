@@ -6,13 +6,13 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 18:40:33 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/22 22:34:18 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 22:37:48 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-static int ft_printchar(int c)
+static int	ft_printchar(int c)
 {
 	write(1, &c, 1);
 	return (1);
@@ -20,10 +20,10 @@ static int ft_printchar(int c)
 
 static int	check_type(va_list args, const char input)
 {
-	int	i;
+	int				i;
 	unsigned long	value;
-	int	asc;
-	
+	int				asc;
+
 	i = 0;
 	if (input == 'c')
 		i += print_char(va_arg(args, int));
@@ -48,7 +48,7 @@ static int	check_type(va_list args, const char input)
 
 int	ft_printf(const char *str, ...)
 {
-	va_list 		args;
+	va_list			args;
 	int				i;
 	int				print_len;
 

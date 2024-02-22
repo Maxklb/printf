@@ -6,7 +6,7 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 23:36:11 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/22 18:58:29 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 22:39:12 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	print_string(char *str)
 {
 	unsigned int	i;
-	
+
 	i = 0;
 	if (!str)
 	{
