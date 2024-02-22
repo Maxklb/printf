@@ -6,7 +6,7 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 18:40:33 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/22 18:56:43 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 19:06:58 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ static int	check_type(const char *input, void *arg)
 	return (i);
 }
 
-int	ft_printf(const char *format, ...)
+int	ft_printf(const char *input, ...)
 {
 	va_list 		args;
 	unsigned int	i;
