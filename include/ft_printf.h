@@ -6,13 +6,14 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 18:26:19 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/19 17:53:28 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 16:10:28 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINT_H
 # define FT_PRINTF_H
 
+# include <stdarg.h>
 # include "libft/libft.h"
 
 int	ft_printf(const char *format, ...);

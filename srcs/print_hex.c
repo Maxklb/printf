@@ -6,13 +6,13 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:05:31 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/21 18:46:15 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 12:03:58 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static char	*create_str(unsigned int value, int *len)
+static char	*create_hex(unsigned int value, int *len)
 {
 	int				i;
 	unsigned int	buffer;
@@ -39,7 +39,7 @@ int	print_hex(unsigned int value, int asc)
 
 	iptr = &i;
 	tempval = value;
-	printout = create_str(value, iptr);
+	printout = create_hex(value, iptr);
 	if (!printout)
 		return (0);
 	while (tempval != 0)
