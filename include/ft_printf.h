@@ -6,7 +6,7 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 18:26:19 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/22 18:57:34 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 21:33:30 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include <stdarg.h>
 # include "../libft/libft.h"
 
-int	ft_printf(const char *format, ...);
+int	ft_printf(const char *input, ...);
 int	print_unsigned(unsigned int nb);
 int	print_string(char *str);
 int	print_int(int n);
