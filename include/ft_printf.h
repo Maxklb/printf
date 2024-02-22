@@ -6,15 +6,15 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 18:26:19 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/22 16:10:28 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 18:57:34 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINT_H
+#ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
 # include <stdarg.h>
-# include "libft/libft.h"
+# include "../libft/libft.h"
 
 int	ft_printf(const char *format, ...);
 int	print_unsigned(unsigned int nb);

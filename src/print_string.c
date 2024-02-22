@@ -6,11 +6,11 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/13 23:36:11 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/14 15:02:13 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 18:58:29 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 int	print_string(char *str)
 {

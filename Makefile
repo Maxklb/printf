@@ -6,46 +6,49 @@
 #    By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/09 13:44:22 by makoch-l          #+#    #+#              #
-#    Updated: 2024/02/19 17:49:02 by makoch-l         ###   ########.fr        #
+#    Updated: 2024/02/22 19:00:08 by makoch-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
-LIBFTNAME = libft.a
-LIBFTDIR = ./libft
 
-SRCS = ft_printf.c \
-		printfchar.c \
-		print_int.c \
-		print_string.c \
-		print_unsigned.c \
-		print_hex.c \
-		print_pointer.c
+SRC_PATH = src/
+LIBFT_PATH = libft/
+LIBFT_LIB = libft.a
+INCLUDE_PATH = include/
 
-OBJS = $(SRCS:.c=.o) 
+SRC_FILES = src/ft_printf.c \
+			src/print_pointer.c \
+			src/print_unsigned.c \
+			src/print_string.c \
+			src/print_int.c \
+			src/print_char.c \
+			src/print_hex.c
 
-.c.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+SRC_OBJS = $(SRC_FILES:.c=.o)
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -Wall -Wextra -Werror
+RM = rm -f
+AR = ar rcs
+
+LIBFT_OBJS = $(LIBFT_PATH)*.o
+LIBFTMAKE = $(MAKE) -C $(LIBFT_PATH)
 
 all : $(NAME)
 
-makelibft:
-	@make -C $(LIBFTDIR)
-	@cp $(LIBFTDIR)/$(LIBFTNAME) .
-	@mv $(LIBFTNAME) $(NAME)
+$(NAME) : $(SRC_OBJS) pmake
+	$(AR) $(NAME) $(SRC_OBJS) $(LIBFT_OBJS)
 
-$(NAME): $(OBJS)
-	ar rcs $(NAME) $(OBJS)
+pmake :
+	$(LIBFTMAKE)
 
 clean :
-	rm -f $(OBJS)
+	$(RM) $(SRC_OBJS)
 
 fclean : clean
-	rm -f $(NAME)
+			$(RM) $(NAME)
 
 re : fclean $(NAME)
 
-.PHONY : all clean fclean re
+.PHONY : all clean fclean re pmake

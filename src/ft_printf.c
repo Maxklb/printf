@@ -6,11 +6,11 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 18:40:33 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/22 16:14:57 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 18:56:43 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../include/ft_printf.h"
 
 static int	check_type(const char *input, void *arg)
 {
