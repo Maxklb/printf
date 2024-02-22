@@ -6,55 +6,66 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 18:40:33 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/22 21:29:38 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 22:34:18 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-static int	check_type(const char *input, void *arg)
+static int ft_printchar(int c)
+{
+	write(1, &c, 1);
+	return (1);
+}
+
+static int	check_type(va_list args, const char input)
 {
 	int	i;
+	unsigned long	value;
+	int	asc;
 	
 	i = 0;
-	if (*input == 'c')
-		i += print_char((int)arg);
-	else if (*input == 's')
-		i += print_string((char *)arg);
-	else if (*input == 'p')
-		i += print_pointer((unsigned long)arg, 87);
-	else if (*input == 'd' || *input == 'i')
-		i += print_int((int)arg);
-	else if (*input == 'u')
-		i += print_unsigned((unsigned int)arg);
-	else if (*input == 'x')
-		i += print_hex((unsigned int)arg, 87);
-	else if (*input == 'X')
-		i += print_hex((unsigned int)arg, 55);
+	if (input == 'c')
+		i += print_char(va_arg(args, int));
+	else if (input == 's')
+		i += print_string(va_arg(args, char *));
+	else if (input == 'p')
+	{
+		value = va_arg(args, unsigned long);
+		asc = va_arg(args, int);
+		i += print_pointer(value, asc);
+	}
+	else if (input == 'd' || input == 'i')
+		i += print_int(va_arg(args, unsigned int));
+	else if (input == 'u')
+		i += print_unsigned(va_arg(args, unsigned int));
+	else if (input == 'x')
+		i += print_hex(va_arg(args, unsigned int), 87);
+	else if (input == 'X')
+		i += print_hex(va_arg(args, unsigned int), 55);
 	return (i);
 }
 
-int	ft_printf(const char *input, ...)
+int	ft_printf(const char *str, ...)
 {
 	va_list 		args;
-	unsigned int	i;
+	int				i;
+	int				print_len;
 
 	i = 0;
-	va_start(args, input);
-	while (*input != '\0')
+	print_len = 0;
+	va_start(args, str);
+	while (str[i])
 	{
-		if (*input == '%')
+		if (str[i] == '%')
 		{
-			input++;
-			if (ft_strchr("cspdiuxX", *input))
-				i += check_type(input, va_arg(args, void *));
-			else if (*input == '%')
-				i += print_char('%');
+			print_len += check_type(args, str[i + 1]);
+			i++;
 		}
 		else
-			i = i + print_char(*input);
-		input++;
+			print_len += ft_printchar(str[i]);
+		i++;
 	}
 	va_end(args);
-	return (i);
+	return (print_len);
 }

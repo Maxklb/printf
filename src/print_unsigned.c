@@ -6,7 +6,7 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 14:56:59 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/22 18:58:18 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 22:35:15 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	printout(unsigned int nb)
 	if (nb <= 9)
 	{
 		ft_putchar_fd(nb + 48, 1);
-		return NULL;
+		return ;
 	}
 	ft_putchar_fd((nb % 10) + 48, 1);
 }

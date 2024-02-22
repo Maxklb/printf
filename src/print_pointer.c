@@ -6,7 +6,7 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:48:05 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/22 18:58:45 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 22:35:01 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,14 @@ static char	*create_hex(unsigned int value, int *len)
 
 int	print_pointer(unsigned long value, int asc)
 {
-		unsigned long	tempval;
+	unsigned long	tempval;
 	char			*printout;
 	int				i;
 	int				*iptr;
 
 	iptr = &i;
 	tempval = value;
-	printout = create_string(value, iptr);
+	printout = create_hex(value, iptr);
 	if (!printout)
 		return (0);
 	while (tempval != 0 && i >= 0)
