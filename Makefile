@@ -6,7 +6,7 @@
 #    By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/09 13:44:22 by makoch-l          #+#    #+#              #
-#    Updated: 2024/02/22 19:00:08 by makoch-l         ###   ########.fr        #
+#    Updated: 2024/02/22 23:10:21 by makoch-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,7 +23,8 @@ SRC_FILES = src/ft_printf.c \
 			src/print_string.c \
 			src/print_int.c \
 			src/print_char.c \
-			src/print_hex.c
+			src/print_hex.c \
+			src/print_percent.c
 
 SRC_OBJS = $(SRC_FILES:.c=.o)
 

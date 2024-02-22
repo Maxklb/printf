@@ -6,7 +6,7 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 18:26:19 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/22 22:09:51 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 23:11:36 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FT_PRINTF_H
 
 # include <stdarg.h>
+# include <unistd.h>
 # include "../libft/libft.h"
 
 int	ft_printf(const char *str, ...);
@@ -23,5 +24,6 @@ int	print_int(int n);
 int	print_char(char c);
 int	print_hex(unsigned int value, int asc);
 int	print_pointer(unsigned long value, int asc);
+int	print_percent(void);
 
 #endif

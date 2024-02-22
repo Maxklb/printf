@@ -6,7 +6,7 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 18:40:33 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/22 22:37:48 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 23:09:51 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,15 @@ static int	check_type(va_list args, const char input)
 		i += print_pointer(value, asc);
 	}
 	else if (input == 'd' || input == 'i')
-		i += print_int(va_arg(args, unsigned int));
+		i += print_int(va_arg(args, int));
 	else if (input == 'u')
 		i += print_unsigned(va_arg(args, unsigned int));
 	else if (input == 'x')
 		i += print_hex(va_arg(args, unsigned int), 87);
 	else if (input == 'X')
 		i += print_hex(va_arg(args, unsigned int), 55);
+	else if (input == '%')
+		i += print_percent();
 	return (i);
 }
 

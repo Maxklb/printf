@@ -6,7 +6,7 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:48:05 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/22 22:42:48 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/22 22:56:11 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,14 +42,14 @@ int	print_pointer(unsigned long value, int asc)
 	printout = create_hex(value, iptr);
 	if (!printout)
 		return (0);
-	while (tempval != 0 && i >= 0)
+	while (tempval != 0 && i-- >= 0)
 	{
 		if ((tempval % 16) < 10)
 			printout[i + 1] = (tempval % 16) + 48;
 		else
 			printout[i + 1] = (tempval % 16) + asc;
 		tempval = tempval / 16;
-		i--;
+
 	}
 	i = ft_strlen(printout) + print_string("0x");
 	ft_putstr_fd(printout, 1);
