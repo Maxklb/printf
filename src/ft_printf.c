@@ -6,7 +6,7 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 18:40:33 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/22 23:09:51 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/23 15:47:14 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,4 +70,10 @@ int	ft_printf(const char *str, ...)
 	}
 	va_end(args);
 	return (print_len);
+}
+
+int main()
+{
+	ft_printf("%s","j'aime les grosses");
+	return (0);
 }
