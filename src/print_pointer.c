@@ -6,7 +6,7 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:48:05 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/22 22:56:11 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/24 20:43:34 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	print_pointer(unsigned long value, int asc)
 	tempval = value;
 	printout = create_hex(value, iptr);
 	if (!printout)
-		return (0);
+		return(0);
 	while (tempval != 0 && i-- >= 0)
 	{
 		if ((tempval % 16) < 10)
