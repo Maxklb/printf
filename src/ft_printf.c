@@ -6,7 +6,7 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 18:40:33 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/24 20:25:00 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/26 17:40:21 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,6 @@ static int	ft_printchar(int c)
 static int	check_type(va_list args, const char input)
 {
 	int				i;
-	unsigned long	value;
-	int				asc;
 
 	i = 0;
 	if (input == 'c')
@@ -30,11 +28,7 @@ static int	check_type(va_list args, const char input)
 	else if (input == 's')
 		i += print_string(va_arg(args, char *));
 	else if (input == 'p')
-	{
-		value = va_arg(args, unsigned long);
-		asc = va_arg(args, int);
-		i += print_pointer(value, asc);
-	}
+		i += print_pointer(va_arg(args, unsigned long long));
 	else if (input == 'd' || input == 'i')
 		i += print_int(va_arg(args, int));
 	else if (input == 'u')

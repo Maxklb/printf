@@ -6,55 +6,53 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/19 17:48:05 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/24 20:43:34 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/26 17:40:58 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
 
-static char	*create_hex(unsigned int value, int *len)
+int	ft_ptr_len(unsigned long num)
 {
-	int				i;
-	unsigned long	buffer;
-	char			*str;
+	int	len;
 
-	i = 0;
-	buffer = value;
-	while (buffer != 0)
+	len = 0;
+	while (num != 0)
 	{
-		buffer = buffer / 16;
-		i++;
+		len++;
+		num = num / 16;
 	}
-	str = calloc(i + 1, sizeof(char));
-	*len = i - 1;
-	return (str);
+	return (len);
 }
 
-int	print_pointer(unsigned long value, int asc)
+void	ft_put_ptr(unsigned long num)
 {
-	unsigned long	tempval;
-	char			*printout;
-	int				i;
-	int				*iptr;
-
-	iptr = &i;
-	tempval = value;
-	printout = create_hex(value, iptr);
-	if (!printout)
-		return(0);
-	while (tempval != 0 && i-- >= 0)
+	if (num >= 16)
 	{
-		if ((tempval % 16) < 10)
-			printout[i + 1] = (tempval % 16) + 48;
-		else
-			printout[i + 1] = (tempval % 16) + asc;
-		tempval = tempval / 16;
-
+		ft_put_ptr(num / 16);
+		ft_put_ptr(num % 16);
 	}
-	i = ft_strlen(printout) + print_string("0x");
-	ft_putstr_fd(printout, 1);
-	free(printout);
-	if (value == 0)
-		i += print_char('0');
+	else
+	{
+		if (num <= 9)
+			ft_putchar_fd((num + '0'), 1);
+		else
+			ft_putchar_fd((num - 10 + 'a'), 1);
+	}
+}
+
+int	print_pointer(unsigned long long ptr)
+{
+	int	i;
+
+	i = 0;
+	if (!ptr)
+		i += write(1, "(nil)", 5);
+	else
+	{
+		i += write(1, "0x", 2);
+		ft_put_ptr(ptr);
+		i += ft_ptr_len(ptr);
+	}
 	return (i);
 }

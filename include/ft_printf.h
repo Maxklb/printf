@@ -6,7 +6,7 @@
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/14 18:26:19 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/24 20:25:50 by makoch-l         ###   ########.fr       */
+/*   Updated: 2024/02/26 16:54:56 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	print_string(char *str);
 int	print_int(int n);
 int	print_char(char c);
 int	print_hex(unsigned int value, int asc);
-int	print_pointer(unsigned long, int asc);
+int	print_pointer(unsigned long long ptr);
 int	print_percent(void);
 
 #endif
