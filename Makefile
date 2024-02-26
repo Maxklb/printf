@@ -6,7 +6,7 @@
 #    By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/09 13:44:22 by makoch-l          #+#    #+#              #
-#    Updated: 2024/02/22 23:10:21 by makoch-l         ###   ########.fr        #
+#    Updated: 2024/02/26 19:39:22 by makoch-l         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -49,6 +49,7 @@ clean :
 
 fclean : clean
 			$(RM) $(NAME)
+			$(MAKE) -C $(LIBFT_PATH) fclean
 
 re : fclean $(NAME)
 
