@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: makoch-l <makoch-l@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/06 18:40:33 by makoch-l          #+#    #+#             */
-/*   Updated: 2024/02/29 17:03:17 by makoch-l         ###   ########.fr       */
+/*   Created: 2024/03/01 17:26:37 by makoch-l          #+#    #+#             */
+/*   Updated: 2024/03/01 18:36:12 by makoch-l         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,11 +65,17 @@ int	ft_printf(const char *str, ...)
 	va_end(args);
 	return (print_len);
 }
-/*
-int main()
+
+/*int main()
 {
-	ft_printf("%s","j'aime les pizzas ananas");
-	ft_printf("%d","42")
-	ft_printf("%i","42")
+	ft_printf("%s","j'aime les pizzas ananas\n");
+	ft_printf("Mon entier est : %d\n", 42);
+	ft_printf("Mon entier est : %i\n", 42);
+	ft_printf("Mon entier non signé est : %u\n", 42);
+	ft_printf("%","j'aime les pizzas ananas\n");
+	ft_printf("Mon entier en hexadécimal (maj) est : %X\n", 42);
+	ft_printf("Mon entier en hexadécimal (min) est : %x\n", 42);
+	ft_printf("Mon pointeur est : %p\n", 42);
+	ft_printf("Mon caractère est : %c\n", 'c');
 	return (0);
 }*/
